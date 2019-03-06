@@ -1,42 +1,66 @@
-import { Link } from "gatsby"
-import PropTypes from "prop-types"
-import React from "react"
+import React, { useState, useRef } from "react";
+import { Link } from "gatsby";
+import { useTransition } from "react-spring";
+import styled from "styled-components";
+import Hamburger from "./Hamburger";
+import Navigation from "./Navigation";
+import { Icon, white } from "../utilities";
+import useOnClickOutside from "../hooks/useOnClickOutside";
 
-const Header = ({ siteTitle }) => (
-  <header
-    style={{
-      background: `rebeccapurple`,
-      marginBottom: `1.45rem`,
-    }}
-  >
-    <div
-      style={{
-        margin: `0 auto`,
-        maxWidth: 960,
-        padding: `1.45rem 1.0875rem`,
-      }}
-    >
-      <h1 style={{ margin: 0 }}>
-        <Link
-          to="/"
-          style={{
-            color: `white`,
-            textDecoration: `none`,
-          }}
-        >
-          {siteTitle}
-        </Link>
-      </h1>
-    </div>
-  </header>
-)
+const Header = () => {
+  const [toggle, setToggle] = useState(false);
+  const transitions = useTransition(toggle, null, {
+    from: { transform: "translate3d(-960px,0 ,0)" },
+    enter: { transform: "translate3d(0,0 ,0)" },
+    leave: { transform: "translate3d(-960px,0 ,0)" },
+  });
+  const ref = useRef();
+  useOnClickOutside(ref, () => setToggle(false));
 
-Header.propTypes = {
-  siteTitle: PropTypes.string,
-}
+  return (
+    <StyledHeader ref={ref}>
+      <HeaderContainer>
+        <Hamburger toggle={() => setToggle(!toggle)} />
+        <h1>
+          <Link
+            to="/"
+            style={{
+              color: `#070707`,
+              textDecoration: `none`,
+              display: "flex",
+              alignItems: "center",
+            }}
+          >
+            <Icon name="NavLogo" />
+          </Link>
+        </h1>
+        {transitions.map(
+          ({ item, key, props }) => item && <Navigation style={props} />
+        )}
+      </HeaderContainer>
+    </StyledHeader>
+  );
+};
 
-Header.defaultProps = {
-  siteTitle: ``,
-}
+const StyledHeader = styled.header`
+  height: 50px;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  background-color: ${white};
+  box-shadow: 0 1px 3px -3px rgba(0, 0, 0, 0.3);
+  z-index: 2000;
+`;
 
-export default Header
+const HeaderContainer = styled.div`
+  margin: 0 auto;
+  max-width: 956px;
+  width: 95%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+`;
+
+export default Header;
