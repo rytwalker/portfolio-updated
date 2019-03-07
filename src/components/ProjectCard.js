@@ -3,7 +3,7 @@ import { Link } from "gatsby";
 import styled from "styled-components";
 import { primary } from "../utilities";
 
-const ProjectCard = ({ src, title }) => {
+const ProjectCard = ({ src, title, path }) => {
   return (
     <StyledProjectCard>
       <img src={src} alt="project" />
@@ -12,7 +12,7 @@ const ProjectCard = ({ src, title }) => {
         Aside from coding, I spend a night of my week hosting a pub quiz at a
         local restaurant. After realizing that there is..
       </p>
-      <Link>See more...</Link>
+      <Link to={`/projects${path}`}>See more...</Link>
     </StyledProjectCard>
   );
 };

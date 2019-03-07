@@ -6,7 +6,7 @@ import { Container } from "../elements/Container";
 
 const Contact = () => {
   return (
-    <StyledContact>
+    <StyledContact id="contact">
       <Container>
         <SectionHeading>Contact</SectionHeading>
         <p>
