@@ -20,9 +20,9 @@ const Banner = () => {
           />
         </HeroBg>
       </Hero>
-      {/* <a href="/about"> */}
-      <DownArrow name="arrowDown" />
-      {/* </a> */}
+      <Link to="/#projects">
+        <DownArrow name="arrowDown" />
+      </Link>
     </StyledBanner>
   );
 };
