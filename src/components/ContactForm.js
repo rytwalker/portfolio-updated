@@ -80,6 +80,7 @@ class ContactForm extends Component {
             onChange={this.handleInputChange}
           />
         </div>
+        <input type="hidden" name="form-name" value="contact" />
         <button>Send</button>
       </StyledForm>
     );
@@ -130,12 +131,16 @@ const StyledForm = styled.form`
     textarea {
       font-size: 1.6rem;
       padding: 1rem;
-      border: 2px solid #dddddd;
-      border-radius: 5px;
-      transition: all 0.2s;
+      border: none;
+      border-bottom: 2px solid transparent;
+      font-family: inherit;
+      font-size: 1.4rem;
+      /* border-radius: 5px; */
+      transition: all 0.3s;
+      transform-origin: left;
       &:focus {
         outline: 0;
-        border: 2px solid #8fdfde;
+        border-bottom: 2px solid #8fdfde;
       }
     }
     textarea {
