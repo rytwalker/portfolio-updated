@@ -28,8 +28,8 @@ const Banner = () => {
 };
 
 const DownArrow = styled(Icon)`
-  width: 50px;
-  height: 50px;
+  width: 30px;
+  height: 30px;
 `;
 
 const HeroBg = styled.svg`

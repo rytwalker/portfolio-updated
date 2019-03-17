@@ -132,7 +132,7 @@ const StyledForm = styled.form`
       font-size: 1.6rem;
       padding: 1rem;
       border: none;
-      border-bottom: 2px solid transparent;
+      border-bottom: 2px solid #ddd;
       font-family: inherit;
       font-size: 1.4rem;
       /* border-radius: 5px; */
