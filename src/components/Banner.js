@@ -1,15 +1,16 @@
 import React from "react";
 import { Link } from "gatsby";
 import styled from "styled-components";
-import { Icon, black, white } from "../utilities";
+import { Icon, black, primary, white } from "../utilities";
+import Button from "../elements/Button";
 
 const Banner = () => {
   return (
     <StyledBanner>
       <Hero>
         <span className="name">Ryan Walker</span>
-        <span className="tag">Is a Developer</span>
-        <HeroBg width="100%" height="193" viewBox="0 0 333 193" fill="none">
+        <span className="tag">Is a Web Developer.</span>
+        {/* <HeroBg width="100%" height="193" viewBox="0 0 333 193" fill="none">
           <circle cx="236.5" cy="96.5" r="96.5" fill="#8FDFDE" />
           <circle
             cx="96.5"
@@ -18,11 +19,14 @@ const Banner = () => {
             fill="#D1345B"
             fill-opacity="0.8"
           />
-        </HeroBg>
+        </HeroBg> */}
       </Hero>
-      <Link to="/#projects">
-        <DownArrow name="arrowDown" />
-      </Link>
+      <Button>
+        <Link className="btn-link" to="/#projects">
+          <Icon name="code" className="btn-icon" />
+          View Projects
+        </Link>
+      </Button>
     </StyledBanner>
   );
 };
@@ -48,8 +52,6 @@ const StyledBanner = styled.div`
 `;
 
 const Hero = styled.h1`
-  width: 333px;
-  height: 193px;
   position: relative;
   /* border: 1px solid black; */
   display: flex;
@@ -60,20 +62,22 @@ const Hero = styled.h1`
   .tag {
     display: block;
     text-transform: uppercase;
-    line-height: 1;
+    line-height: 0.9;
     z-index: 100;
     padding: 0 1.6rem;
   }
   .name {
     color: ${black};
     font-weight: 900;
-    font-size: 3.6rem;
+    font-style: italic;
+    font-size: 4.8rem;
   }
 
   .tag {
-    color: ${white};
-    font-weight: 700;
-    font-size: 2.8rem;
+    color: ${primary};
+    font-weight: 300;
+    font-size: 3.6rem;
+    text-transform: lowercase;
   }
 `;
 

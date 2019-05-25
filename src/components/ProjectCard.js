@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "gatsby";
 import styled from "styled-components";
-import { primary } from "../utilities";
+import { primary, black } from "../utilities";
 
 const ProjectCard = ({ src, title, path }) => {
   return (
@@ -20,6 +20,7 @@ const ProjectCard = ({ src, title, path }) => {
 const StyledProjectCard = styled.div`
   width: 100%;
   margin-bottom: 5rem;
+  color: ${black};
   img {
     width: 100%;
     margin-bottom: 2rem;
@@ -40,6 +41,7 @@ const ProjectCardHeading = styled.h3`
   font-size: 2.4rem;
   text-align: center;
   margin-bottom: 2rem;
+  color: ${black};
 `;
 
 export default ProjectCard;

@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { black } from "../utilities";
+import { white } from "../utilities";
 
 const Hamburger = ({ toggle }) => {
   return (
@@ -23,7 +23,7 @@ const Line = styled.div`
   width: 30px;
   height: 3px;
   position: absolute;
-  background: ${black};
+  background: ${white};
   border-radius: 2px;
   top: 50%;
 `;

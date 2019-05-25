@@ -39,6 +39,24 @@ class Icon extends Component {
             />
           </svg>
         );
+      case "code":
+        return (
+          <svg
+            width="28"
+            height="28"
+            viewBox="0 0 367 512"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M190.4 354.1L91.9 256L190.3 157.9L160.3 128L32 256L160.4 384L190.4 354.1ZM321.6 354.1L420 256L321.6 157.9L351.6 128L480 256L351.6 384L321.6 354.1Z"
+              fill="#1F1F1F"
+            />
+            <path
+              d="M155.6 276H195.6V236H155.6V276ZM356.4 236H316.4V276H356.4V236ZM236 276H276V236H236V276Z"
+              fill="#1F1F1F"
+            />
+          </svg>
+        );
       case "NavLogo":
         return (
           <svg
