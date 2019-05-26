@@ -1,8 +1,7 @@
 import React from "react";
 import { Link } from "gatsby";
 import styled from "styled-components";
-import { Icon, black, primary, white } from "../utilities";
-import Button from "../elements/Button";
+import { Icon, black, primary } from "../utilities";
 
 const Banner = () => {
   return (
@@ -10,36 +9,20 @@ const Banner = () => {
       <Hero>
         <span className="name">Ryan Walker</span>
         <span className="tag">Is a Web Developer.</span>
-        {/* <HeroBg width="100%" height="193" viewBox="0 0 333 193" fill="none">
-          <circle cx="236.5" cy="96.5" r="96.5" fill="#8FDFDE" />
-          <circle
-            cx="96.5"
-            cy="96.5"
-            r="96.5"
-            fill="#D1345B"
-            fill-opacity="0.8"
-          />
-        </HeroBg> */}
       </Hero>
-      <Button>
-        <Link className="btn-link" to="/#projects">
-          <Icon name="code" className="btn-icon" />
-          View Projects
-        </Link>
-      </Button>
+
+      <Link className="btn-link" to="/#projects">
+        <CodeIcon name="code" />
+        <span>View Projects</span>
+      </Link>
     </StyledBanner>
   );
 };
 
-const DownArrow = styled(Icon)`
-  width: 30px;
-  height: 30px;
-`;
-
-const HeroBg = styled.svg`
-  position: absolute;
-  top: 0;
-  z-index: -100;
+const CodeIcon = styled(Icon)`
+  margin-left: 5px;
+  height: 20px;
+  fill: red;
 `;
 
 const StyledBanner = styled.div`
@@ -49,6 +32,32 @@ const StyledBanner = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
+
+  .btn-link {
+    border: 1px solid #c4c4c4;
+    border-radius: 4px;
+    padding: 1rem 2rem;
+    background: transparent;
+    cursor: pointer;
+    transition: all 0.2s;
+    font-size: 2rem;
+    font-weight: 300;
+    color: #1f1f1f;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-style: italic;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    &:hover {
+      border-color: #1f1f1f;
+      color: ${primary};
+    }
+    span {
+      margin-left: 5px;
+    }
+  }
 `;
 
 const Hero = styled.h1`

@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import { black, primary } from "../utilities/colors";
 
 const Button = ({ children }) => {
   return <StyledButton>{children}</StyledButton>;
@@ -27,6 +28,10 @@ const StyledButton = styled.button`
     display: flex;
     align-items: center;
     justify-content: space-between;
+
+    &:hover {
+      color: ${primary};
+    }
 
     .btn-icon {
       margin-left: 1rem;

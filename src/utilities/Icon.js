@@ -4,7 +4,7 @@ import styled from "styled-components";
 
 class Icon extends Component {
   static defaultProps = {
-    color: "#070707",
+    color: "#1f1f1f",
   };
   render() {
     switch (this.props.name) {
@@ -42,19 +42,14 @@ class Icon extends Component {
       case "code":
         return (
           <svg
-            width="28"
-            height="28"
-            viewBox="0 0 367 512"
+            width="40"
+            height="40"
+            viewBox="0 0 40 40"
+            fill={this.props.color}
             xmlns="http://www.w3.org/2000/svg"
           >
-            <path
-              d="M190.4 354.1L91.9 256L190.3 157.9L160.3 128L32 256L160.4 384L190.4 354.1ZM321.6 354.1L420 256L321.6 157.9L351.6 128L480 256L351.6 384L321.6 354.1Z"
-              fill="#1F1F1F"
-            />
-            <path
-              d="M155.6 276H195.6V236H155.6V276ZM356.4 236H316.4V276H356.4V236ZM236 276H276V236H236V276Z"
-              fill="#1F1F1F"
-            />
+            <path d="M14.875 27.6641L7.17969 20L14.8672 12.3359L12.5234 10L2.5 20L12.5312 30L14.875 27.6641ZM25.125 27.6641L32.8125 20L25.125 12.3359L27.4688 10L37.5 20L27.4688 30L25.125 27.6641Z" />
+            <path d="M12.1562 21.5625H15.2812V18.4375H12.1562V21.5625ZM27.8437 18.4375H24.7187V21.5625H27.8437V18.4375ZM18.4375 21.5625H21.5625V18.4375H18.4375V21.5625Z" />
           </svg>
         );
       case "NavLogo":
