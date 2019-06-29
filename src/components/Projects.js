@@ -1,16 +1,40 @@
 import React from "react";
-import { StaticQuery } from "gatsby";
+import { graphql, StaticQuery } from "gatsby";
 import styled from "styled-components";
-import { above } from "../utilities";
+import { above, primary } from "../utilities";
 import ProjectCard from "./ProjectCard";
-import { PROJECT_LIST_QUERY } from "../queries";
+
+const PROJECT_LIST_QUERY = graphql`
+  query ProjectListQuery {
+    allMarkdownRemark {
+      edges {
+        node {
+          excerpt
+          frontmatter {
+            title
+            path
+            imgUrl {
+              childImageSharp {
+                fluid(maxWidth: 956) {
+                  src
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+`;
 
 const Projects = () => (
   <StaticQuery
     query={PROJECT_LIST_QUERY}
     render={({ allMarkdownRemark }) => (
       <StyledProjects id="projects">
-        <SectionHeading>Projects</SectionHeading>
+        <SectionHeading>
+          <span>my featured </span>Projects
+        </SectionHeading>
         <ProjectsContainer>
           {allMarkdownRemark.edges.map(edge => (
             <ProjectCard
@@ -44,10 +68,15 @@ const ProjectsContainer = styled.div`
 `;
 
 const SectionHeading = styled.h2`
-  font-weight: 700;
+  font-weight: 400;
   text-transform: uppercase;
-  font-size: 3.6rem;
+  font-size: 2.4rem;
   margin-bottom: 3rem;
+  text-align: center;
+  span {
+    color: ${primary};
+    text-transform: lowercase;
+  }
 `;
 
 export default Projects;

@@ -35,6 +35,7 @@ const ProjectHeading = styled.h1`
   text-align: center;
   padding: 2rem 0;
   text-transform: uppercase;
+  font-weight: 300;
 `;
 
 const ProjectTechContainer = styled.div`
