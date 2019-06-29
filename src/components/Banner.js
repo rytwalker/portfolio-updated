@@ -1,15 +1,19 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "gatsby";
 import styled from "styled-components";
-import { useTrail, animated } from "react-spring";
+import { useSpring, useTrail, animated } from "react-spring";
 import { Icon, black, primary } from "../utilities";
 
-const items = ["Ryan Walker", "Is a Web Developer"];
+const items = ["Ryan Walker", "Is a Web Developer."];
 const classes = ["name", "tag"];
 const config = { mass: 5, tension: 2000, friction: 200 };
 
 const Banner = () => {
-  const [toggle, set] = useState(true);
+  const [toggle, set] = useState(false);
+  const fade = useSpring({
+    opacity: toggle ? 1 : 0,
+    config: { duration: 500 },
+  });
   const trail = useTrail(items.length, {
     config,
     opacity: toggle ? 1 : 0,
@@ -17,6 +21,7 @@ const Banner = () => {
     height: toggle ? 80 : 0,
     from: { opacity: 0, x: 20, height: 0 },
   });
+  useEffect(() => setTimeout(() => set(true), 250), []);
   return (
     <StyledBanner>
       <Hero>
@@ -28,16 +33,16 @@ const Banner = () => {
               transform: x.interpolate(x => `translate3d(0,${x}px,0)`),
             }}
           >
-            <animated.span styles={{ height }} className={classes[index]}>
+            <animated.span className={classes[index]}>
               {items[index]}
             </animated.span>
           </AnimatedTitleContainer>
         ))}
       </Hero>
 
-      <Link className="btn-link" to="/#projects">
-        <span>{"</> View Projects"}</span>
-      </Link>
+      <AnimatedLink style={fade} className="btn-link" to="/#projects">
+        <animated.span style={fade}>{"</> View Projects"}</animated.span>
+      </AnimatedLink>
       {/* <button onClick={() => set(!toggle)}>Toggle</button> */}
     </StyledBanner>
   );
@@ -125,5 +130,7 @@ const Hero = styled.h1`
     text-transform: lowercase;
   }
 `;
+
+const AnimatedLink = animated(Link);
 
 export default Banner;

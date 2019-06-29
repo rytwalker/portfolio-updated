@@ -2,10 +2,11 @@
 path: "/connect-our-kids"
 date: "2019-06-29"
 title: "Connect Our Kids"
-imgUrl: "../images/daily-pages-1.png"
+imgUrl: "../images/connect-our-kids-1.png"
 tech: ["React", "Redux", "Postgres"]
 links: { "github": "https://github.com", "website": "https://github.com" }
 description: "Connect Our Kids mobile app is a free tool built for social workers that helps them find contact information of a foster child’s family members with the goal of placing foster children in homes with their extended family."
+mobile: true
 ---
 
 ![alt text](../images/daily-pages-1.png)
