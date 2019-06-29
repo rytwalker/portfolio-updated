@@ -4,7 +4,7 @@ date: "2019-03-09"
 title: "Suzie's Scores"
 imgUrl: "../images/suzies-scores-1.png"
 tech: ["React", "Redux", "Postgres"]
-links: { "github": "https://github.com", "website": "https://github.com" }
+links: { "github": "https://github.com/rytwalker/scores-client", "website": "https://sharp-mccarthy-8025d0.netlify.com/" }
 description: "Suzie’s Scores is a desktop app that aggregates trivia scores providing teams with long-term statistics of their performance over time."
 mobile: false
 ---

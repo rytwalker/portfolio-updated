@@ -4,7 +4,7 @@ date: "2019-03-08"
 title: "Treasure Hunt"
 imgUrl: "../images/treasure-hunt-1.png"
 tech: ["React", "Redux", "Postgres"]
-links: { "github": "https://github.com", "website": "https://github.com" }
+links: { "github": "https://github.com/rytwalker/treasure-hunt", "website": "https://github.com" }
 description: "Treasure Hunt is a MUD built using a graph data structure and uses several methods to traverse and explore the treasure map."
 mobile: false
 ---
