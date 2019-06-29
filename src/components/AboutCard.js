@@ -146,6 +146,7 @@ const AboutRight = styled(Half)`
   `}
   ${above.lg`
     width: 50%;
+    height: 107%;
   `}
 `;
 

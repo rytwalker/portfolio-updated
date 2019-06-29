@@ -70,7 +70,7 @@ const ContactForm = () => {
           <AnimatedAlert
             style={{
               background:
-                `${message.type}` === "success" ? `${secondary}` : "red",
+                `${message.type}` === "success" ? `${secondary}` : "#B57760",
               opacity: showAlert.opacity,
               transform: showAlert.x.interpolate(
                 x => `translate3d(0,${x}px,0)`
