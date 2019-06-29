@@ -13,6 +13,7 @@ const PROJECT_LIST_QUERY = graphql`
           frontmatter {
             title
             path
+            description
             imgUrl {
               childImageSharp {
                 fluid(maxWidth: 956) {
@@ -40,6 +41,7 @@ const Projects = () => (
             <ProjectCard
               key={edge.node.frontmatter.path}
               title={edge.node.frontmatter.title}
+              description={edge.node.frontmatter.description}
               src={edge.node.frontmatter.imgUrl.childImageSharp.fluid.src}
               path={edge.node.frontmatter.path}
             />

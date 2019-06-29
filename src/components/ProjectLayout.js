@@ -10,7 +10,7 @@ const ProjectLayout = ({ data }) => {
     <Layout>
       <Container>
         <ProjectHeading>{data.markdownRemark.frontmatter.title}</ProjectHeading>
-        <div
+        <Markdown
           className="markdown"
           dangerouslySetInnerHTML={{
             __html: data.markdownRemark.html,
@@ -38,6 +38,11 @@ const ProjectHeading = styled.h1`
   font-weight: 300;
 `;
 
+const Markdown = styled.div`
+  width: 800px;
+  margin: 0 auto;
+`;
+
 const ProjectTechContainer = styled.div`
   display: flex;
   flex-wrap: wrap;
@@ -45,6 +50,8 @@ const ProjectTechContainer = styled.div`
   font-style: italic;
   font-size: 1.4rem;
   margin-bottom: 2rem;
+  width: 800px;
+  margin: 0 auto;
 `;
 
 const ProjectTech = styled.div`
@@ -56,6 +63,8 @@ const ProjectTech = styled.div`
 `;
 
 const ProjectLinks = styled.div`
+  width: 800px;
+  margin: 0 auto;
   margin-bottom: 3rem;
 
   a,

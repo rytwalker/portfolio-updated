@@ -51,11 +51,17 @@ const Header = () => {
             }}
           >
             {/* <Icon name="NavLogo" /> */}
-            RW
+            {/* RW */}
+            <img
+              style={{ height: "35px", width: "35px;" }}
+              src={require("../images/logo.png")}
+              alt="logo"
+            />
           </Link>
         </h1>
         {transitions.map(
-          ({ item, key, props }) => item && <Navigation style={props} />
+          ({ item, key, props }) =>
+            item && <Navigation style={props} setToggle={setToggle} />
         )}
       </HeaderContainer>
     </StyledHeader>

@@ -5,6 +5,7 @@ title: "Treasure Hunt"
 imgUrl: "../images/treasure-hunt-1.png"
 tech: ["React", "Redux", "Postgres"]
 links: { "github": "https://github.com", "website": "https://github.com" }
+description: "Suzie’s Scores is a desktop app that aggregates trivia scores providing teams with long-term statistics of their performance over time."
 ---
 
 ![alt text](../images/treasure-hunt-1.png)

@@ -96,7 +96,7 @@ const encode = data => {
 const StyledForm = styled.form`
   display: flex;
   flex-direction: column;
-  width: 60%;
+  width: 80%;
   margin: 0 auto;
   @media (max-width: 768px) {
     width: 100%;

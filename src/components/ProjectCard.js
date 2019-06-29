@@ -3,15 +3,13 @@ import { Link } from "gatsby";
 import styled from "styled-components";
 import { primary, black } from "../utilities";
 
-const ProjectCard = ({ src, title, path }) => {
+const ProjectCard = ({ description, path, src, title }) => {
+  console.log(description);
   return (
     <StyledProjectCard>
       <img src={src} alt="project" />
       <ProjectCardHeading>{title}</ProjectCardHeading>
-      <p>
-        Aside from coding, I spend a night of my week hosting a pub quiz at a
-        local restaurant. After realizing that there is..
-      </p>
+      <p>{description}</p>
       <Link to={`/projects${path}`}>See more...</Link>
     </StyledProjectCard>
   );

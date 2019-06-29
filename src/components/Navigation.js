@@ -4,13 +4,21 @@ import { animated } from "react-spring";
 import styled from "styled-components";
 import { primary, white } from "../utilities";
 
-const Navigation = ({ style }) => {
+const Navigation = ({ setToggle, style }) => {
   return (
     <StyledNav style={style}>
-      <Link to="/">Home</Link>
-      <Link to="/#projects">Projects</Link>
-      <Link to="/about">About</Link>
-      <Link to="/#contact">Contact</Link>
+      <Link onClick={() => setToggle(false)} to="/">
+        Home
+      </Link>
+      <Link onClick={() => setToggle(false)} to="/#projects">
+        Projects
+      </Link>
+      <Link onClick={() => setToggle(false)} to="/about">
+        About
+      </Link>
+      <Link onClick={() => setToggle(false)} to="/#contact">
+        Contact
+      </Link>
     </StyledNav>
   );
 };

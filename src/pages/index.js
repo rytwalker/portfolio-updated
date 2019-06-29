@@ -1,6 +1,7 @@
 import React from "react";
 
 import Layout from "../components/layout";
+import AboutCard from "../components/AboutCard";
 import Banner from "../components/Banner";
 import Projects from "../components/Projects";
 import Contact from "../components/Contact";
@@ -14,6 +15,7 @@ const IndexPage = () => (
       <Banner />
       <Projects />
     </Container>
+    <AboutCard />
     <Contact />
   </Layout>
 );

@@ -7,7 +7,7 @@ import { Container } from "../elements/Container";
 const Contact = () => {
   return (
     <StyledContact id="contact">
-      <Container>
+      <Container style={{ maxWidth: "800px" }}>
         <SectionHeading>Contact</SectionHeading>
         <p>
           I am searching for a role where I can use my development skills to
@@ -20,7 +20,7 @@ const Contact = () => {
 };
 
 const StyledContact = styled.section`
-  background-color: #e1eceb;
+  background-color: #85a8ab;
   padding: 5rem 0;
   p {
     margin-bottom: 3rem;
