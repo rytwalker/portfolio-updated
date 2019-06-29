@@ -24,7 +24,7 @@ const skills = [
 
 const AboutPage = () => {
   return (
-    <AboutContainer>
+    <AboutContainer id="about">
       <AboutLeft>
         <img src={headshot} alt="It's me!" className="headshot" />
       </AboutLeft>

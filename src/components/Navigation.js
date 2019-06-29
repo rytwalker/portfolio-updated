@@ -13,7 +13,7 @@ const Navigation = ({ setToggle, style }) => {
       <Link onClick={() => setToggle(false)} to="/#projects">
         Projects
       </Link>
-      <Link onClick={() => setToggle(false)} to="/about">
+      <Link onClick={() => setToggle(false)} to="/#about">
         About
       </Link>
       <Link onClick={() => setToggle(false)} to="/#contact">

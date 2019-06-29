@@ -1,6 +1,6 @@
 ---
 path: "/suzies-scores"
-date: "2019-03-07"
+date: "2019-03-09"
 title: "Suzie's Scores"
 imgUrl: "../images/suzies-scores-1.png"
 tech: ["React", "Redux", "Postgres"]

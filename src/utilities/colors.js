@@ -1,7 +1,7 @@
 export const primary = "#85A8AB";
-export const primaryLight = "#E1ECEB";
-export const secondary = "#D1345B";
-export const lightGrey = "#EFEFEF";
+export const primaryLight = "#CDE7EA";
+export const secondary = "#9E976B";
+export const lightGrey = "#eee";
 export const grey = "#C9C9C9";
 export const darkGrey = "#3A3A3A";
 // export const darkGrey = '#070707';

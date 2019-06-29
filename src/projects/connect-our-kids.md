@@ -1,11 +1,11 @@
 ---
-path: "/daily-pages"
-date: "2019-03-05"
-title: "Daily Pages"
+path: "/connect-our-kids"
+date: "2019-06-29"
+title: "Connect Our Kids"
 imgUrl: "../images/daily-pages-1.png"
 tech: ["React", "Redux", "Postgres"]
 links: { "github": "https://github.com", "website": "https://github.com" }
-description: "Suzie’s Scores is a desktop app that aggregates trivia scores providing teams with long-term statistics of their performance over time."
+description: "Connect Our Kids mobile app is a free tool built for social workers that helps them find contact information of a foster child’s family members with the goal of placing foster children in homes with their extended family."
 ---
 
 ![alt text](../images/daily-pages-1.png)

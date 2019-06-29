@@ -1,19 +1,44 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "gatsby";
 import styled from "styled-components";
+import { useTrail, animated } from "react-spring";
 import { Icon, black, primary } from "../utilities";
 
+const items = ["Ryan Walker", "Is a Web Developer"];
+const classes = ["name", "tag"];
+const config = { mass: 5, tension: 2000, friction: 200 };
+
 const Banner = () => {
+  const [toggle, set] = useState(true);
+  const trail = useTrail(items.length, {
+    config,
+    opacity: toggle ? 1 : 0,
+    x: toggle ? 0 : 20,
+    height: toggle ? 80 : 0,
+    from: { opacity: 0, x: 20, height: 0 },
+  });
   return (
     <StyledBanner>
       <Hero>
-        <span className="name">Ryan Walker</span>
-        <span className="tag">Is a Web Developer.</span>
+        {trail.map(({ x, height, ...rest }, index) => (
+          <AnimatedTitleContainer
+            key={items[index]}
+            style={{
+              ...rest,
+              transform: x.interpolate(x => `translate3d(0,${x}px,0)`),
+            }}
+          >
+            <animated.span styles={{ height }} className={classes[index]}>
+              {items[index]}
+            </animated.span>
+          </AnimatedTitleContainer>
+        ))}
       </Hero>
 
       <Link className="btn-link" to="/#projects">
         <span>{"</> View Projects"}</span>
       </Link>
+      {/* <button onClick={() => set(!toggle)}>Toggle</button> */}
     </StyledBanner>
   );
 };
@@ -23,6 +48,16 @@ const CodeIcon = styled(Icon)`
   height: 20px;
   fill: red;
 `;
+
+const TitleContainer = styled.div`
+  will-change: transform, opacity;
+  /* overflow: hidden; */
+  position: relative;
+  /* padding-bottom: 1rem; */
+  width: 100%;
+`;
+
+const AnimatedTitleContainer = animated(TitleContainer);
 
 const StyledBanner = styled.div`
   min-height: calc(100vh - 50px);
@@ -67,6 +102,8 @@ const Hero = styled.h1`
   flex-direction: column;
   justify-content: center;
   margin-bottom: 5rem;
+  height: 120px;
+  overflow: hidden;
   .name,
   .tag {
     display: block;
