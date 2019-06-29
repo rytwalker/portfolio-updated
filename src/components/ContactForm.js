@@ -17,8 +17,10 @@ const ContactForm = () => {
     message: "",
   });
   const [submitted, setSubmitted] = useState(false);
+  const [message, setMessage] = useState({ type: "", message: "" });
 
-  const toggleSubmitMessage = () => {
+  const toggleSubmitMessage = (type, message) => {
+    setMessage({ type, message });
     setSubmitted(true);
     setTimeout(() => setSubmitted(false), 3000);
   };
@@ -39,18 +41,19 @@ const ContactForm = () => {
       !formValues.email.length ||
       !formValues.message.length
     ) {
-    }
-
-    fetch("/", {
-      method: "POST",
-      headers: { "Content-Type": "application/x-www-form-urlencoded" },
-      body: encode({ "form-name": "contact", ...formValues }),
-    })
-      .then(() => {
-        setFormValues({ name: "", email: "", message: "" });
-        toggleSubmitMessage();
+      toggleSubmitMessage("failure", "Please fill out every field!");
+    } else {
+      fetch("/", {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: encode({ "form-name": "contact", ...formValues }),
       })
-      .catch(error => alert(error));
+        .then(() => {
+          setFormValues({ name: "", email: "", message: "" });
+          toggleSubmitMessage("success", "Thank you for reaching out!");
+        })
+        .catch(error => alert(error));
+    }
   };
 
   const handleInputChange = e =>
@@ -66,26 +69,31 @@ const ContactForm = () => {
         <AlertContainer>
           <AnimatedAlert
             style={{
+              background:
+                `${message.type}` === "success" ? `${secondary}` : "red",
               opacity: showAlert.opacity,
               transform: showAlert.x.interpolate(
                 x => `translate3d(0,${x}px,0)`
               ),
             }}
           >
-            Thank you for reaching out!
+            {message.message}
           </AnimatedAlert>
         </AlertContainer>
         <ContactFormGroup
+          inputValue={formValues.name}
           inputName="name"
           label="name:"
           handleInputChange={handleInputChange}
         />
         <ContactFormGroup
+          inputValue={formValues.email}
           inputName="email"
           label="email:"
           handleInputChange={handleInputChange}
         />
         <ContactFormGroup
+          inputValue={formValues.message}
           inputName="message"
           label="message:"
           handleInputChange={handleInputChange}
@@ -129,7 +137,7 @@ const FormButton = styled.button`
   }
   &:focus {
     outline: 0;
-    border: 2px solid #8fdfde;
+    border: 2px solid #eee;
   }
 `;
 

@@ -21,7 +21,9 @@ const Banner = () => {
     height: toggle ? 80 : 0,
     from: { opacity: 0, x: 20, height: 0 },
   });
-  useEffect(() => setTimeout(() => set(true), 250), []);
+  useEffect(() => {
+    setTimeout(() => set(true), 250);
+  }, []);
   return (
     <StyledBanner>
       <Hero>

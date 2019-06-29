@@ -5,6 +5,7 @@ import { primaryDark, primaryLight } from "../utilities";
 
 const ContactFormGroup = ({
   inputName,
+  inputValue,
   label,
   handleInputChange,
   textArea = false,
@@ -32,6 +33,7 @@ const ContactFormGroup = ({
           onChange={e => handleInputChange(e)}
           onFocus={focusInput}
           onBlur={blurInput}
+          value={inputValue}
         />
       ) : (
         <FormTextArea
@@ -40,6 +42,7 @@ const ContactFormGroup = ({
           onChange={e => handleInputChange(e)}
           onFocus={focusInput}
           onBlur={blurInput}
+          value={inputValue}
         />
       )}
       <animated.div
