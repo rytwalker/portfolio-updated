@@ -8,7 +8,8 @@ import { black } from "../utilities";
 import useOnClickOutside from "../hooks/useOnClickOutside";
 import HorizontalNavigation from "./HorizontalNavigation";
 
-const getWidth = () => (window ? window.innerWidth : null);
+const getWidth = () =>
+  typeof window !== "undefined" ? window.innerWidth : null;
 
 const Header = () => {
   const [toggle, setToggle] = useState(false);
@@ -24,11 +25,11 @@ const Header = () => {
 
   useEffect(() => {
     // TO DO: add debouncer
-    if (window) {
+    if (typeof window !== "undefined") {
       window.addEventListener("resize", () => setScreenWidth(getWidth()));
     }
     return () => {
-      if (window) {
+      if (typeof window !== "undefined") {
         window.removeEventListener("resize", () => setScreenWidth(getWidth()));
       }
     };
