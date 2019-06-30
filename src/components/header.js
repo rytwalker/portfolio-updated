@@ -4,7 +4,7 @@ import { useTransition } from "react-spring";
 import styled from "styled-components";
 import Hamburger from "./Hamburger";
 import Navigation from "./Navigation";
-import { Icon, black, white } from "../utilities";
+import { black } from "../utilities";
 import useOnClickOutside from "../hooks/useOnClickOutside";
 import HorizontalNavigation from "./HorizontalNavigation";
 

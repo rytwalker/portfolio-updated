@@ -3,7 +3,6 @@ import styled from "styled-components";
 import ContactForm from "./ContactForm";
 import { SectionHeading } from "../elements/SectionHeading";
 import { Container } from "../elements/Container";
-import { above } from "../utilities";
 
 const Contact = () => {
   return (

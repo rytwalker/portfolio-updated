@@ -6,13 +6,21 @@ const HorizontalSocialBar = () => {
   return (
     <StyledSocialBar>
       <div className="container">
-        <a href="https://github.com/rytwalker" target="_blank">
+        <a
+          href="https://github.com/rytwalker"
+          rel="noopener noreferrer"
+          target="_blank"
+        >
           <Icon name="Github" />
         </a>
-        <a href="https://linkedin.com" target="blank">
+        <a href="https://linkedin.com" rel="noopener noreferrer" target="blank">
           <Icon name="Linkedin" />
         </a>
-        <a href="https://twitter.com/mr_ryanwalker" target="blank">
+        <a
+          href="https://twitter.com/mr_ryanwalker"
+          rel="noopener noreferrer"
+          target="blank"
+        >
           <Icon name="Twitter" />
         </a>
       </div>

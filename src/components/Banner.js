@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Link } from "gatsby";
 import styled from "styled-components";
 import { useSpring, useTrail, animated } from "react-spring";
-import { Icon, black, primary } from "../utilities";
+import { black, primary } from "../utilities";
 
 const items = ["Ryan Walker", "Is a Web Developer."];
 const classes = ["name", "tag"];
@@ -50,11 +50,11 @@ const Banner = () => {
   );
 };
 
-const CodeIcon = styled(Icon)`
-  margin-left: 5px;
-  height: 20px;
-  fill: red;
-`;
+// const CodeIcon = styled(Icon)`
+//   margin-left: 5px;
+//   height: 20px;
+//   fill: red;
+// `;
 
 const TitleContainer = styled.div`
   will-change: transform, opacity;

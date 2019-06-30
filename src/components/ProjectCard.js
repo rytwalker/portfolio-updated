@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "gatsby";
+// import { Link } from "gatsby";
 import styled from "styled-components";
 import { above, primary, black } from "../utilities";
 
@@ -81,12 +81,12 @@ const ContentContainer = styled.div`
    `}
 `;
 
-const StyledLink = styled(Link)`
-  color: ${primary};
-  &:visited {
-    color: ${primary};
-  }
-`;
+// const StyledLink = styled(Link)`
+//   color: ${primary};
+//   &:visited {
+//     color: ${primary};
+//   }
+// `;
 
 const ProjectCardHeading = styled.h3`
   text-transform: uppercase;
