@@ -64,7 +64,9 @@ const ContactForm = () => {
       <StyledForm
         onSubmit={handleFormSubmit}
         data-netlify="true"
-        name="portfolio"
+        method="post"
+        name="contact"
+        data-netlify-honeypot="bot-field"
       >
         <AlertContainer>
           <AnimatedAlert
@@ -99,7 +101,7 @@ const ContactForm = () => {
           handleInputChange={handleInputChange}
           textArea={true}
         />
-
+        <input type="hidden" name="bot-field" />
         <input type="hidden" name="form-name" value="contact" />
         <FormButton>Send</FormButton>
       </StyledForm>
