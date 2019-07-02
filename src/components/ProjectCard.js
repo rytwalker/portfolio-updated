@@ -1,5 +1,5 @@
 import React from "react";
-// import { Link } from "gatsby";
+import { Link } from "gatsby";
 import styled from "styled-components";
 import { above, primary, black } from "../utilities";
 
@@ -25,7 +25,7 @@ const ProjectCard = ({
         <ProjectCardHeading>{title}</ProjectCardHeading>
 
         <p>{description}</p>
-        {/* <StyledLink to={`/projects${path}`}>Read more...</StyledLink> */}
+        <StyledLink to={`/projects${path}`}>Read more...</StyledLink>
         <ButtonContainer>
           <Button href={links.website} target="_blank">
             SITE
@@ -81,12 +81,12 @@ const ContentContainer = styled.div`
    `}
 `;
 
-// const StyledLink = styled(Link)`
-//   color: ${primary};
-//   &:visited {
-//     color: ${primary};
-//   }
-// `;
+const StyledLink = styled(Link)`
+  color: ${primary};
+  &:visited {
+    color: ${primary};
+  }
+`;
 
 const ProjectCardHeading = styled.h3`
   text-transform: uppercase;
