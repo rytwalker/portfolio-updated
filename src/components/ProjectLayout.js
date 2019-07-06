@@ -1,40 +1,15 @@
-import React, { useCallback, useState } from "react";
+import React from "react";
 import styled from "styled-components";
-import { useTransition, animated } from "react-spring";
 import Layout from "./layout";
 import { graphql } from "gatsby";
 import { Container } from "../elements/Container";
 import { white, primary, black } from "../utilities";
 
 const ProjectLayout = ({ data }) => {
-  console.log(data.markdownRemark.frontmatter.mobile);
-  // data.markdownRemark.frontmatter.imgUrls.length
-  // const [index, set] = useState(0);
-  // const onClick = useCallback(() => set(state => (state + 1) % 3), []);
-  // const transitions = useTransition(index, p => p, {
-  //   from: { opacity: 0, transform: "translate3d(100%,0,0)" },
-  //   enter: { opacity: 1, transform: "translate3d(0%,0,0)" },
-  //   leave: { opacity: 0, transform: "translate3d(-50%,0,0)" },
-  // });
   return (
     <Layout>
-      <Container style={{ position: "relative" }}>
+      <Container>
         <ProjectHeading>{data.markdownRemark.frontmatter.title}</ProjectHeading>
-        {/* {transitions.map(({ item, props, key }) => {
-          return (
-            <AnimatedImgContainer key={key} style={props}>
-              <animated.img
-                // style={props}
-                src={
-                  data.markdownRemark.frontmatter.imgUrls[item].childImageSharp
-                    .fluid.src
-                }
-                alt="img"
-              />
-            </AnimatedImgContainer>
-          );
-        })} */}
-        {/* <button onClick={onClick}>Transition</button> */}
         <Markdown
           className="markdown"
           dangerouslySetInnerHTML={{
@@ -57,23 +32,6 @@ const ProjectLayout = ({ data }) => {
   );
 };
 
-const ImgContainer = styled.div`
-  border: 1px solid black;
-  width: 800px;
-  /* height: 500px; */
-  margin: 0 auto;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: relative;
-  img {
-    position: absolute;
-    width: 800px;
-  }
-`;
-
-const AnimatedImgContainer = animated(ImgContainer);
-
 const ProjectHeading = styled.h1`
   font-size: 3.6rem;
   text-align: center;
@@ -83,7 +41,7 @@ const ProjectHeading = styled.h1`
 `;
 
 const Markdown = styled.div`
-  width: 800px;
+  max-width: 800px;
   margin: 0 auto;
   ul {
     list-style: circle;
@@ -100,6 +58,7 @@ const Markdown = styled.div`
 
   .gatsby-resp-image-background-image {
     opacity: ${({ mobile }) => (mobile ? "0 !important" : "0")};
+    position: ${({ mobile }) => (mobile ? "static !important" : "relative")};
   }
 `;
 
@@ -110,7 +69,7 @@ const ProjectTechContainer = styled.div`
   font-style: italic;
   font-size: 1.4rem;
   margin-bottom: 2rem;
-  width: 800px;
+  max-width: 800px;
   margin: 0 auto;
   h3 {
     width: 100%;
@@ -128,7 +87,7 @@ const ProjectTech = styled.div`
 `;
 
 const ProjectLinks = styled.div`
-  width: 800px;
+  max-width: 800px;
   margin: 0 auto;
   margin-bottom: 3rem;
   display: flex;
