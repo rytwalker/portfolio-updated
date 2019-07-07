@@ -35,8 +35,6 @@ const Header = () => {
     };
   }, []);
 
-  console.log(screenWidth);
-
   return (
     <StyledHeader ref={ref}>
       <HeaderContainer>

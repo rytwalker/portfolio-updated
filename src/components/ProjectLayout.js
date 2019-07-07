@@ -47,18 +47,23 @@ const Markdown = styled.div`
     list-style: circle;
     padding-left: 2rem;
   }
+  .gatsby-resp-image-wrapper {
+    /* height: 500px; */
+    
+  }
   .gatsby-resp-image-image,
   .gatsby-resp-image-background-image {
     margin: 0 auto;
     height: ${({ mobile }) => (mobile ? "500px !important" : "")};
-    width: ${({ mobile }) => (mobile ? "auto !important" : "100%")};
+    width: ${({ mobile }) => (mobile ? "auto!important" : "100%")};
     padding-bottom: ${({ mobile }) => (mobile ? "0px !important" : "0")};
-    left: ${({ mobile }) => (mobile ? "35% !important" : "200px")};
+    /* left: ${({ mobile }) => (mobile ? "35% !important" : "200px")}; */
   }
 
   .gatsby-resp-image-background-image {
-    opacity: ${({ mobile }) => (mobile ? "0 !important" : "0")};
-    position: ${({ mobile }) => (mobile ? "static !important" : "relative")};
+    /* opacity: ${({ mobile }) => (mobile ? "0 !important" : "0")}; */
+    /* position: ${({ mobile }) =>
+      mobile ? "static !important" : "relative"}; */
   }
 `;
 
