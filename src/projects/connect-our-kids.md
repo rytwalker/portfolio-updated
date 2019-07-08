@@ -11,6 +11,7 @@ imgUrls: ["../images/daily-pages-1.png", "../images/suzies-scores-1.png", "../im
 ---
 
 ![alt text](../images/connect-our-kids-1.png)
+
 Connect Our Kids mobile app is a free tool built for social workers that helps them find contact information of a foster child’s family members with the goal of placing  foster children in homes with their extended family. Our team worked with the non-profit Connect Our Kids to make this mobile app a realiy.
  
 This app was built using React Native and Expo utilizing already inplace tools like The People Search API built on Pipl and event tracking using MixPanel.  

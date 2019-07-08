@@ -54,9 +54,9 @@ const Markdown = styled.div`
   .gatsby-resp-image-image,
   .gatsby-resp-image-background-image {
     margin: 0 auto;
-    height: ${({ mobile }) => (mobile ? "500px !important" : "")};
+    /* height: ${({ mobile }) => (mobile ? "500px !important" : "")}; */
     width: ${({ mobile }) => (mobile ? "auto!important" : "100%")};
-    padding-bottom: ${({ mobile }) => (mobile ? "0px !important" : "0")};
+    /* padding-bottom: ${({ mobile }) => (mobile ? "0px !important" : "0")}; */
     /* left: ${({ mobile }) => (mobile ? "35% !important" : "200px")}; */
   }
 
