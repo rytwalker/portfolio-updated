@@ -19,7 +19,6 @@ imgUrls:
   ]
 ---
 
-![alt text](../images/treasure-hunt-1.png)
 This project was part of a week-long MUD challenge at Lambda School. This app used different graph traversal algorithms in order to navigate the map. This project doubled as a competition to collect the most gold. I finished the week in third place!
 
 - Built the project in just 5 days.
