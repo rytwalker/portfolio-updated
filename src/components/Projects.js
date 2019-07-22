@@ -87,7 +87,7 @@ const Projects = ({ all }) => (
             />
           ))}
         </ProjectsContainer>
-        {!all && <Button to="/projects">View All Projects</Button>}
+        {/* {!all && <Button to="/projects">View All Projects</Button>} */}
       </StyledProjects>
     )}
   />
