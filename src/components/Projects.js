@@ -36,13 +36,42 @@ const PROJECT_LIST_QUERY = graphql`
   }
 `;
 
-const Projects = () => (
+const PROJECT_LIST_QUERY_ALL = graphql`
+  query ProjectListQueryAll {
+    allMarkdownRemark(sort: { order: DESC, fields: [frontmatter___date] }) {
+      edges {
+        node {
+          excerpt
+          frontmatter {
+            title
+            path
+            description
+            mobile
+            links {
+              github
+              website
+            }
+            imgUrl {
+              childImageSharp {
+                fluid(maxWidth: 956) {
+                  src
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+`;
+
+const Projects = ({ all }) => (
   <StaticQuery
-    query={PROJECT_LIST_QUERY}
+    query={all ? PROJECT_LIST_QUERY_ALL : PROJECT_LIST_QUERY}
     render={({ allMarkdownRemark }) => (
       <StyledProjects id="projects">
         <SectionHeading>
-          <span>my featured </span>Projects
+          {!all && <span>my featured </span>}Projects
         </SectionHeading>
         <ProjectsContainer>
           {allMarkdownRemark.edges.map((edge, index) => (
