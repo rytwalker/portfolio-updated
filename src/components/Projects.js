@@ -1,7 +1,7 @@
 import React from "react";
-import { graphql, StaticQuery } from "gatsby";
+import { graphql, StaticQuery, Link } from "gatsby";
 import styled from "styled-components";
-import { primary } from "../utilities";
+import { primary, black } from "../utilities";
 import ProjectCard from "./ProjectCard";
 
 const PROJECT_LIST_QUERY = graphql`
@@ -87,6 +87,7 @@ const Projects = ({ all }) => (
             />
           ))}
         </ProjectsContainer>
+        {!all && <Button to="/projects">View All Projects</Button>}
       </StyledProjects>
     )}
   />
@@ -94,6 +95,7 @@ const Projects = ({ all }) => (
 
 const StyledProjects = styled.section`
   padding-top: 50px;
+  margin-bottom: 3rem;
 `;
 
 const ProjectsContainer = styled.div`
@@ -110,6 +112,40 @@ const SectionHeading = styled.h2`
   span {
     color: ${primary};
     text-transform: lowercase;
+  }
+`;
+
+const ButtonContainer = styled.div`
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 3rem;
+  margin-top: 5rem;
+`;
+
+const Button = styled(Link)`
+  border: 1px solid ${black};
+  border-radius: 4px;
+  padding: 0.5rem 1rem;
+  background: transparent;
+  cursor: pointer;
+  transition: all 0.2s;
+  font-size: 1.8rem;
+  font-weight: 300;
+  color: ${black};
+  text-decoration: none;
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 20%;
+  margin: auto;
+  &:visited {
+    color: ${black};
+  }
+  &:hover {
+    border-color: ${black};
+    color: ${primary};
+    border: 1px solid ${primary};
   }
 `;
 
